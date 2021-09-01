@@ -9,10 +9,11 @@ from resources.item import Item, ItemList
 from resources.store import Store, StoreList
 
 app = Flask(__name__)
-# OLD # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
+# OLD # 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
 # The above allows us to read both the heroku postgre sql when loaded there and the
-# Sqlite db when on our personal pc 
+# Sqlite db when on our personal pc
 # the SQL Alchemy data base is going to live at the root folder of our project
 # not that it does not need to be sqlite, it can be postgre sql, my sql it can be anything
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
